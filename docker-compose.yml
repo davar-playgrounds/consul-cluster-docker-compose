@@ -8,7 +8,7 @@ services:
       - "8400:8400"
       - "8500:8500"
       - "8600:53"
-    command: "consul agent -bootstrap -server -data-dir=/var/lib/consul -ui -client 0.0.0.0" 
+    command: "consul agent -bootstrap -server -config-dir=/etc/consul.d/ -data-dir=/var/lib/consul -ui -client 0.0.0.0" 
 
   consul2:
     build: .
