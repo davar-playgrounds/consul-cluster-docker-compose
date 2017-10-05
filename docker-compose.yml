@@ -1,7 +1,7 @@
 version: "3"
 services:
   consul1:
-p   build: .
+    build: .
     hostname: "consul1"
     container_name: "consul1"
     ports:
@@ -22,7 +22,7 @@ p   build: .
       - "8600"
     volumes:
       - ./consul.d/:/etc/consul.d/
-    command: "consul agent -retry-join=consul1 -data-dir=/var/lib/consul"
+    command: "consul agent -retry-join=consul1 -config-dir=/etc/consul.d/ -data-dir=/var/lib/consul"
     links:
       - "consul1"
 
@@ -36,6 +36,6 @@ p   build: .
       - "8600"
     volumes:
       - ./consul.d/:/etc/consul.d/
-    command: "consul agent -retry-join=consul1 -data-dir=/var/lib/consul"
+    command: "consul agent -retry-join=consul1 -config-dir=/etc/consul.d/ -data-dir=/var/lib/consul"
     links:
       - "consul1"
