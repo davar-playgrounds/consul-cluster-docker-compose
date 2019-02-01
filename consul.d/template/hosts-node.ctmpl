@@ -1,2 +1,0 @@
-# consul nodes{{range nodes}}
-{{.Address}}    {{.Node}}{{end}}
